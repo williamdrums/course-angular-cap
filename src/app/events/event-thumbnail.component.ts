@@ -1,3 +1,4 @@
+import { IEvent } from './shared/event.model';
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
@@ -34,6 +35,6 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 `]
 })
 export class EventThumbnailComponent {
-    @Input() event: any;
+    @Input() event!:IEvent;
 
 }

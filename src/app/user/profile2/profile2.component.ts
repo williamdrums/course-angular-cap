@@ -1,13 +1,15 @@
-import { Router } from '@angular/router';
-import { OnInit } from '@angular/core';
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
-  templateUrl: './profile.component.html'
+  selector: 'app-profile2',
+  templateUrl: './profile2.component.html',
+  styleUrls: ['./profile2.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class Profile2Component implements OnInit {
+
   profileForm!: FormGroup
 
   constructor(private authService: AuthService, private router: Router) { }

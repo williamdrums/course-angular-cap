@@ -1,6 +1,6 @@
-
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from './common/toastr-service';
 
 import { NgModule } from '@angular/core';
@@ -10,13 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {
   EventsListComponent, EventThumbnailComponent, EventService, EventDetailsComponent, CreateEventComponent,
-  EventListResolver
+  EventListResolver,CreateSessionComponent,SessionListComponent
 } from './events/index'
 
 import { EventsAppComponent } from './events-app.component';
 import { NavbarComponent } from 'src/nav/navbar.component';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
+
 
 
 
@@ -28,14 +29,18 @@ import { AuthService } from './user/auth.service';
     NavbarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventService, ToastrService, EventListResolver,AuthService],
+  providers: [EventService, ToastrService, EventListResolver, AuthService],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
